@@ -1,0 +1,981 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jerin & Navya | Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=IM+Fell+English:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --paper: #ead8b8;
+  --paper-light: #f5e9d2;
+  --brown: #65452f;
+  --dark-brown: #382719;
+  --gold: #a47a42;
+  --soft-gold: #c5a16a;
+  --ink: #4b3425;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 15% 20%, rgba(115,70,30,.16), transparent 35%),
+    radial-gradient(ellipse at 85% 75%, rgba(115,70,30,.15), transparent 35%),
+    linear-gradient(135deg, #8b6745, #c1a078, #876343);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Floating antique dust */
+
+.dust {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: rgba(255,238,190,.7);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatDust linear infinite;
+  z-index: 1;
+}
+
+@keyframes floatDust {
+  from {
+    transform: translateY(105vh) translateX(0);
+    opacity: 0;
+  }
+  20% { opacity: .8; }
+  to {
+    transform: translateY(-10vh) translateX(35px);
+    opacity: 0;
+  }
+}
+
+/* Opening parchment */
+
+.opening {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.parchment {
+  width: 100%;
+  max-width: 680px;
+  min-height: 650px;
+  padding: 65px 35px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(ellipse at 5% 5%, rgba(105,61,27,.20), transparent 30%),
+    radial-gradient(ellipse at 95% 95%, rgba(105,61,27,.20), transparent 30%),
+    radial-gradient(ellipse at 100% 0%, rgba(128,83,42,.12), transparent 35%),
+    radial-gradient(ellipse at 0% 100%, rgba(128,83,42,.13), transparent 35%),
+    linear-gradient(115deg, #e5d0a9, #f5e8cc, #e6d2ac);
+
+  box-shadow:
+    0 15px 45px rgba(42,24,10,.45),
+    inset 0 0 65px rgba(110,69,34,.22);
+
+  border: 1px solid rgba(100,65,35,.5);
+}
+
+.parchment::before {
+  content: "";
+  position: absolute;
+  inset: 13px;
+  border: 1px solid rgba(130,91,49,.65);
+  pointer-events: none;
+}
+
+.parchment::after {
+  content: "";
+  position: absolute;
+  inset: 20px;
+  border: 1px solid rgba(164,122,66,.35);
+  pointer-events: none;
+}
+
+.corner {
+  position: absolute;
+  font-size: 35px;
+  color: #9d7547;
+  opacity: .7;
+}
+
+.top-left { top: 22px; left: 28px; }
+.top-right { top: 22px; right: 28px; }
+.bottom-left { bottom: 22px; left: 28px; }
+.bottom-right { bottom: 22px; right: 28px; }
+
+.opening-content {
+  position: relative;
+  z-index: 3;
+}
+
+.small-heading {
+  font-family: 'IM Fell English', serif;
+  font-size: 16px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #80603d;
+}
+
+.flourish {
+  color: var(--gold);
+  font-size: 28px;
+  margin: 22px 0;
+  letter-spacing: 8px;
+}
+
+.opening h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(55px, 10vw, 86px);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #654128;
+  margin: 25px 0 12px;
+  text-shadow: 1px 2px 2px rgba(255,255,255,.45);
+}
+
+.opening-subtitle {
+  font-family: 'IM Fell English', serif;
+  font-size: 20px;
+  font-style: italic;
+  color: #76563a;
+  line-height: 1.7;
+}
+
+.wax-seal {
+  width: 78px;
+  height: 78px;
+  margin: 35px auto 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #a65b43, #713323 70%);
+  color: #efd6a8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 38px;
+  box-shadow: 0 5px 12px rgba(45,24,12,.35);
+  border: 3px double #c38e65;
+}
+
+.open-button {
+  margin-top: 18px;
+  border: 1px solid #86613c;
+  background: rgba(111,74,43,.08);
+  color: #65452f;
+  padding: 13px 32px;
+  font-family: 'IM Fell English', serif;
+  font-size: 17px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.open-button:hover {
+  background: #785238;
+  color: #f7e9cf;
+  transform: translateY(-3px);
+}
+
+/* Main invitation */
+
+.invitation {
+  display: none;
+  width: 100%;
+  max-width: 1050px;
+  margin: 45px auto;
+  padding: 25px;
+  position: relative;
+  z-index: 2;
+  animation: reveal 1.5s ease;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.paper {
+  position: relative;
+  padding: 65px 45px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(126,78,37,.18), transparent 28%),
+    radial-gradient(ellipse at 100% 100%, rgba(126,78,37,.17), transparent 28%),
+    linear-gradient(120deg, #e8d5b3, #f5e9d1 50%, #e9d7b7);
+  box-shadow:
+    0 15px 45px rgba(40,23,12,.4),
+    inset 0 0 70px rgba(115,74,36,.16);
+  border: 1px solid #a27b4f;
+}
+
+.paper::before {
+  content: "";
+  position: absolute;
+  inset: 13px;
+  border: 1px solid rgba(137,94,52,.65);
+  pointer-events: none;
+}
+
+.paper::after {
+  content: "";
+  position: absolute;
+  inset: 20px;
+  border: 1px solid rgba(164,122,66,.3);
+  pointer-events: none;
+}
+
+.paper-content {
+  position: relative;
+  z-index: 2;
+}
+
+.ornament {
+  color: #a47a42;
+  font-size: 28px;
+  letter-spacing: 9px;
+  margin: 15px 0 25px;
+}
+
+.intro {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 21px;
+  line-height: 1.8;
+  color: #795638;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.main-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(65px, 11vw, 105px);
+  font-weight: 400;
+  color: #68452d;
+  line-height: 1.25;
+  margin: 25px 0 10px;
+}
+
+.ampersand {
+  font-family: 'Great Vibes', cursive;
+  color: #a47a42;
+  font-size: 60px;
+}
+
+.wedding-date {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  letter-spacing: 3px;
+  color: #765638;
+  margin-top: 25px;
+}
+
+.date-sub {
+  font-family: 'IM Fell English', serif;
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 12px;
+  color: #8b6847;
+}
+
+.section {
+  margin: 75px auto 0;
+  max-width: 850px;
+}
+
+.section-heading {
+  font-family: 'Great Vibes', cursive;
+  font-size: 49px;
+  font-weight: 400;
+  color: #704b30;
+  margin-bottom: 15px;
+}
+
+.section-description {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: #806044;
+  line-height: 1.8;
+}
+
+/* Family details */
+
+.family-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+  margin-top: 35px;
+}
+
+.family-card {
+  padding: 30px 20px;
+  border: 1px solid rgba(145,105,64,.55);
+  background: rgba(255,247,228,.28);
+  box-shadow: inset 0 0 25px rgba(120,76,35,.07);
+}
+
+.family-card h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 38px;
+  font-weight: 400;
+  color: #70482e;
+  margin-bottom: 14px;
+}
+
+.family-card .relation {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: #8c6947;
+  margin-bottom: 8px;
+}
+
+.parents {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #503824;
+}
+
+.family-name {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 16px;
+  margin-top: 10px;
+  color: #8c6947;
+}
+
+/* Countdown */
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.time-box {
+  min-width: 105px;
+  padding: 18px 12px;
+  border: 1px solid rgba(145,105,64,.65);
+  background: rgba(255,247,228,.35);
+}
+
+.time-box span {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 35px;
+  color: #70482e;
+}
+
+.time-box small {
+  font-family: 'IM Fell English', serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #886441;
+}
+
+/* Venue */
+
+.venue-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 35px;
+}
+
+.venue-card {
+  padding: 30px 22px;
+  background: rgba(255,247,228,.32);
+  border: 1px solid rgba(145,105,64,.6);
+  box-shadow: inset 0 0 25px rgba(120,76,35,.07);
+}
+
+.venue-icon {
+  font-size: 35px;
+  margin-bottom: 12px;
+}
+
+.venue-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 500;
+  color: #68452d;
+  margin-bottom: 12px;
+}
+
+.venue-time {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: #936b42;
+  margin-bottom: 12px;
+}
+
+.venue-address {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #654a33;
+  margin-bottom: 20px;
+}
+
+.qr-frame {
+  display: inline-block;
+  padding: 10px;
+  background: #fff9e9;
+  border: 1px solid #ad8b60;
+  box-shadow: 0 3px 10px rgba(70,40,20,.12);
+}
+
+.qr-frame img {
+  display: block;
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+}
+
+.qr-caption {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 15px;
+  margin-top: 10px;
+  color: #886441;
+}
+
+.map-button {
+  display: inline-block;
+  margin-top: 17px;
+  padding: 11px 23px;
+  border: 1px solid #89633d;
+  color: #65452f;
+  text-decoration: none;
+  font-family: 'IM Fell English', serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  transition: .3s;
+}
+
+.map-button:hover {
+  background: #785238;
+  color: #fff0d7;
+}
+
+/* Closing */
+
+.closing {
+  margin-top: 75px;
+  padding: 30px 15px;
+}
+
+.closing-text {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 21px;
+  line-height: 1.9;
+  color: #795638;
+}
+
+.closing-names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 55px;
+  color: #70482e;
+  margin-top: 15px;
+}
+
+.footer {
+  font-family: 'IM Fell English', serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #96744e;
+  margin-top: 30px;
+}
+
+/* Mobile */
+
+@media(max-width: 650px) {
+  .opening {
+    padding: 14px;
+  }
+
+  .parchment {
+    min-height: 580px;
+    padding: 65px 23px;
+  }
+
+  .small-heading {
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  .opening-subtitle {
+    font-size: 18px;
+  }
+
+  .invitation {
+    margin: 18px auto;
+    padding: 10px;
+  }
+
+  .paper {
+    padding: 55px 24px;
+  }
+
+  .family-grid,
+  .venue-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .section {
+    margin-top: 55px;
+  }
+
+  .section-heading {
+    font-size: 43px;
+  }
+
+  .intro {
+    font-size: 18px;
+  }
+
+  .wedding-date {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  .time-box {
+    min-width: 75px;
+    padding: 13px 8px;
+  }
+
+  .time-box span {
+    font-size: 27px;
+  }
+
+  .time-box small {
+    font-size: 12px;
+  }
+
+  .qr-frame img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .corner {
+    font-size: 25px;
+  }
+
+  .parents {
+    font-size: 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="dust-container"></div>
+
+<!-- Opening screen -->
+<section class="opening" id="opening">
+  <div class="parchment">
+
+    <span class="corner top-left">❦</span>
+    <span class="corner top-right">❦</span>
+    <span class="corner bottom-left">❦</span>
+    <span class="corner bottom-right">❦</span>
+
+    <div class="opening-content">
+
+      <p class="small-heading">A treasured invitation</p>
+
+      <div class="flourish">✧ ❧ ✧</div>
+
+      <p class="opening-subtitle">
+        A love story written in heaven,<br>
+        a beautiful beginning together
+      </p>
+
+      <h1>Jerin & Navya</h1>
+
+      <p class="opening-subtitle">
+        Together with their families,<br>
+        joyfully invite you to celebrate their wedding
+      </p>
+
+      <div class="wax-seal">J & N</div>
+
+      <button class="open-button" onclick="openInvitation()">
+        Open the Invitation
+      </button>
+
+      <div class="flourish">❧ ✧ ❧</div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Main wedding invitation -->
+<main class="invitation" id="invitation">
+
+  <div class="paper">
+    <div class="paper-content">
+
+      <div class="ornament">❧ ✧ ❧</div>
+
+      <p class="small-heading">In the presence of God</p>
+
+      <h1 class="main-title">Jerin</h1>
+
+      <div class="ampersand">&</div>
+
+      <h1 class="main-title">Navya</h1>
+
+      <div class="ornament">✧ ❦ ✧</div>
+
+      <p class="intro">
+        With grateful hearts and the blessings of our families,
+        we joyfully invite you to witness and celebrate
+        the beginning of our beautiful journey together
+        in the sacrament of Holy Matrimony.
+      </p>
+
+      <p class="wedding-date">WEDNESDAY · 03 FEBRUARY 2027</p>
+
+      <p class="date-sub">At twelve fifteen in the afternoon</p>
+
+
+      <!-- Countdown -->
+      <section class="section">
+        <h2 class="section-heading">Until Our Special Day</h2>
+
+        <p class="section-description">
+          The days until our forever begins
+        </p>
+
+        <div class="countdown">
+
+          <div class="time-box">
+            <span id="days">00</span>
+            <small>DAYS</small>
+          </div>
+
+          <div class="time-box">
+            <span id="hours">00</span>
+            <small>HOURS</small>
+          </div>
+
+          <div class="time-box">
+            <span id="minutes">00</span>
+            <small>MINUTES</small>
+          </div>
+
+          <div class="time-box">
+            <span id="seconds">00</span>
+            <small>SECONDS</small>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- Family details: Groom first, Bride second -->
+      <section class="section">
+
+        <h2 class="section-heading">Our Families</h2>
+
+        <p class="section-description">
+          With the love and blessings of our beloved parents
+        </p>
+
+        <div class="family-grid">
+
+          <div class="family-card">
+
+            <h3>The Groom</h3>
+
+            <p class="relation">Son of</p>
+
+            <p class="parents">
+              Wilson M.K (Late) & Alphonsa Wilson
+            </p>
+
+            <p class="family-name">Manjaly House</p>
+
+          </div>
+
+
+          <div class="family-card">
+
+            <h3>The Bride</h3>
+
+            <p class="relation">Daughter of</p>
+
+            <p class="parents">
+              Raphy J Chazhoor & Neeno Raphy
+            </p>
+
+            <p class="family-name">Chazhoor House</p>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- Venue details -->
+      <section class="section">
+
+        <h2 class="section-heading">The Celebration</h2>
+
+        <p class="section-description">
+          We would be delighted to have you with us
+          on this special occasion
+        </p>
+
+        <div class="venue-grid">
+
+          <!-- Church -->
+          <div class="venue-card">
+
+            <div class="venue-icon">✝</div>
+
+            <h3>Wedding Ceremony</h3>
+
+            <p class="venue-time">
+              12:15 PM
+            </p>
+
+            <p class="venue-address">
+              <strong>Our Lady of Assumption Church</strong><br>
+              Pallikunnu, Varandarapilly,<br>
+              Thrissur, Kerala
+            </p>
+
+            <div class="qr-frame">
+              <img
+                id="churchQR"
+                alt="QR code for wedding church location"
+                loading="eager"
+              >
+            </div>
+
+            <p class="qr-caption">
+              Scan for church location
+            </p>
+
+            <a
+              class="map-button"
+              href="https://www.google.com/maps/search/?api=1&query=Our%20Lady%20of%20Assumption%20Church%2C%20Pallikunnu%2C%20Varandarapilly%2C%20Thrissur%2C%20Kerala"
+              target="_blank"
+              rel="noopener"
+            >
+              Get Directions
+            </a>
+
+          </div>
+
+
+          <!-- Reception -->
+          <div class="venue-card">
+
+            <div class="venue-icon">❦</div>
+
+            <h3>Wedding Reception</h3>
+
+            <p class="venue-time">
+              12:15 PM
+            </p>
+
+            <p class="venue-address">
+              <strong>Assumption Parish Hall</strong><br>
+              Pallikunnu, Varandarapilly,<br>
+              Thrissur, Kerala
+            </p>
+
+            <div class="qr-frame">
+              <img
+                id="receptionQR"
+                alt="QR code for wedding reception location"
+                loading="eager"
+              >
+            </div>
+
+            <p class="qr-caption">
+              Scan for reception location
+            </p>
+
+            <a
+              class="map-button"
+              href="https://www.google.com/maps/search/?api=1&query=Assumption%20Parish%20Hall%2C%20Pallikunnu%2C%20Varandarapilly%2C%20Thrissur%2C%20Kerala"
+              target="_blank"
+              rel="noopener"
+            >
+              Get Directions
+            </a>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- Closing message -->
+      <section class="closing">
+
+        <div class="ornament">❧ ✧ ❧</div>
+
+        <p class="closing-text">
+          "Therefore what God has joined together,<br>
+          let no one separate."<br>
+          <strong>Matthew 19:6</strong>
+        </p>
+
+        <p class="closing-text" style="margin-top:22px;">
+          Your presence and blessings<br>
+          will make our day even more special.
+        </p>
+
+        <div class="closing-names">
+          Jerin & Navya
+        </div>
+
+        <div class="ornament">✧ ❦ ✧</div>
+
+        <p class="footer">
+          WITH LOVE AND GRATITUDE
+        </p>
+
+      </section>
+
+    </div>
+  </div>
+
+</main>
+
+
+<script>
+
+// Open invitation
+function openInvitation() {
+  document.getElementById("opening").style.display = "none";
+
+  const invitation = document.getElementById("invitation");
+  invitation.style.display = "block";
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+
+// Wedding countdown
+const weddingDate = new Date("2027-02-03T12:15:00+05:30").getTime();
+
+function updateCountdown() {
+
+  const now = new Date().getTime();
+  const difference = weddingDate - now;
+
+  if (difference <= 0) {
+    document.getElementById("days").textContent = "00";
+    document.getElementById("hours").textContent = "00";
+    document.getElementById("minutes").textContent = "00";
+    document.getElementById("seconds").textContent = "00";
+    return;
+  }
+
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((difference / (1000 * 60)) % 60);
+  const seconds = Math.floor((difference / 1000) % 60);
+
+  document.getElementById("days").textContent = days;
+  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+  document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+
+// QR code setup
+const churchLocation =
+  "https://www.google.com/maps/search/?api=1&query=Our%20Lady%20of%20Assumption%20Church%2C%20Pallikunnu%2C%20Varandarapilly%2C%20Thrissur%2C%20Kerala";
+
+const receptionLocation =
+  "https://www.google.com/maps/search/?api=1&query=Assumption%20Parish%20Hall%2C%20Pallikunnu%2C%20Varandarapilly%2C%20Thrissur%2C%20Kerala";
+
+function setQRCode(elementId, location) {
+  const qr = document.getElementById(elementId);
+
+  const qrUrl =
+    "https://api.qrserver.com/v1/create-qr-code/?size=300x300&format=png&data=" +
+    encodeURIComponent(location);
+
+  qr.src = qrUrl;
+
+  qr.onerror = function() {
+    qr.alt = "QR code could not load. Please use Get Directions.";
+  };
+}
+
+setQRCode("churchQR", churchLocation);
+setQRCode("receptionQR", receptionLocation);
+
+
+// Floating vintage dust particles
+const dustContainer = document.getElementById("dust-container");
+
+for (let i = 0; i < 30; i++) {
+
+  const dust = document.createElement("div");
+  dust.className = "dust";
+
+  dust.style.left = Math.random() * 100 + "%";
+  dust.style.animationDuration = (8 + Math.random() * 12) + "s";
+  dust.style.animationDelay = (Math.random() * 10) + "s";
+  dust.style.opacity = Math.random() * 0.6;
+
+  dustContainer.appendChild(dust);
+}
+
+</script>
+
+</body>
+</html>
